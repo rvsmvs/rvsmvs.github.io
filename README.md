@@ -3,13 +3,24 @@
 
 ---
 
-## Læringsmål
+#### Læringsmål
 
-**Viden**  
-Jeg har viden om metoder til analyse af malware samt hvordan analyseresultater kan sættes i relation til kendte trusselsmodeller.
+**Viden**
 
-**Færdighed**  
-Jeg kan anvende statiske og dynamiske analysemetoder til at identificere tekniske karakteristika ved ransomware.
+- Forståelse af malwareanalysemetoder, ransomware-arkitektur og centrale tekniske karakteristika (kryptering, persistence, netværkskommunikation).
 
-**Kompetence**  
-Jeg kan anvende malwareanalyse til at understøtte detektion og respons i en organisatorisk kontekst.
+- Indblik i Threat Intelligence-principper, herunder IoCs, TTP’er og MITRE ATT&CK.
+
+**Kompetence**
+
+- Opsætning af isoleret analyse-lab og gennemførsel af statisk, dynamisk og reverse engineering-analyse.
+
+- Omsætte analyseresultater til konkrete forslag, der kan hjælpe med at opdage, håndtere og forebygge angreb.
+
+- Sammenligning og validering af fund med etablerede trusselsrapporter.
+
+**Færdigheder**
+
+- Identificere og dokumentere IoCs samt kortlægge TTP’er.
+
+- Udarbejde tekniske rapporter og visualiseringer af ransomware-livscyklus og angrebsflow.
