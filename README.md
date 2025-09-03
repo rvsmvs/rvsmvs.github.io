@@ -1,6 +1,8 @@
 # <span style="color: #ff201e">Unmasking Ransomware</span>
 #### A Deep Dive into Malware Analysis and Threat Intelligence
 
+---
+
 ## Læringsmål
 
 **Viden**  
