@@ -1,0 +1,20 @@
+title: "Unmasking Ransomware - A Deep Dive into Malware Analysis and Threat Intelligence"
+description: "A school project documenting safe, ethical techniques for reversing ransomware, extracting IOCs, and producing threat intelligence."
+theme: jekyll-theme-minimal
+
+# Set these after publishing:
+url: ""
+baseurl: ""
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  writeups:
+    output: true
+    permalink: /:collection/:name/
+
+logo: /assets/logo.png
+show_downloads: false
