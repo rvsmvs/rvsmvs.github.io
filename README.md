@@ -13,7 +13,7 @@
 
 **Kompetence**
 
-- Opsætning af isoleret analyse-lab og gennemførsel af statisk, dynamisk og reverse engineering-analyse.
+- Opsætning af isoleret miljø til statisk og dynamisk analyse af malware.
 
 - Omsætte analyseresultater til konkrete forslag, der kan hjælpe med at opdage, håndtere og forebygge angreb.
 
