@@ -1,20 +1,22 @@
-title: "Unmasking Ransomware - A Deep Dive into Malware Analysis and Threat Intelligence"
-description: "A school project documenting safe, ethical techniques for reversing ransomware, extracting IOCs, and producing threat intelligence."
-theme: jekyll-theme-minimal
+# Setup
+title:               Lanyon
+tagline:             'A Jekyll theme'
+description:         'A reserved <a href="https://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+url:                 http://lanyon.getpoole.com
+baseurl:             ''
+paginate:            5
+permalink:           pretty
 
-# Set these after publishing:
-url: ""
-baseurl: ""
+# About/contact
+author:
+  name:              Mark Otto
+  url:               https://twitter.com/mdo
+  email:             markdotto@gmail.com
 
-markdown: kramdown
+# Gems
 plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  - jekyll-paginate
 
-collections:
-  writeups:
-    output: true
-    permalink: /:collection/:name/
-
-logo: /assets/logo.png
-show_downloads: false
+# Custom vars
+version:             1.1.0
+google_analytics_id: #UA-XXXX-Y
