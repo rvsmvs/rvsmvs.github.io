@@ -1,11 +1,16 @@
-# <span style="color: #ff201e">Quick.</span> The fastest and easiest way to&nbsp;create a&nbsp;GitHub Pages website for your project.
-#### The Quick theme magically transforms your `README.md` into a GitHub Pages site, applying clean and visually appealing styles.
+# <span style="color: #ff201e">Unmasking Ransomware</span>
+#### A Deep Dive into Malware Analysis and Threat Intelligence
 
-<p class="ignore">Just see it yourself&thinsp;—&thinsp;<a href="https://devich.github.io/quick/">this page</a> is the same <code>README.md</code> file you’re reading, but with the Quick theme applied:</p>
+## Læringsmål
 
-<a class="ignore" href="https://devich.github.io/quick/"><img src="assets/img/preview.png" alt="Quick preview"></a>
+**Viden**  
+Jeg har viden om metoder til analyse af malware samt hvordan analyseresultater kan sættes i relation til kendte trusselsmodeller.
 
-## Quick start
+**Færdighed**  
+Jeg kan anvende statiske og dynamiske analysemetoder til at identificere tekniske karakteristika ved ransomware.
+
+**Kompetence**  
+Jeg kan anvende malwareanalyse til at understøtte detektion og respons i en organisatorisk kontekst.
 
 1. Make sure a `README.md` file exists in the root directory of your repo, and GitHub Pages is enabled in your repository settings.
 
