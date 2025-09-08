@@ -52,7 +52,12 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-size: 16px;
 }
+
+h1, h2, h3, h4, h5, h6 { line-height: 1.25; margin-top: 1.5em; margin-bottom: 0.5em; }
+p { margin: 0 0 1em 0; }
+ul, ol { margin: 0 0 1em 1.25em; }
 
 img, svg, video, canvas, audio, iframe, embed, object { display: block; max-width: 100%; }
 
@@ -126,6 +131,8 @@ blockquote { margin: 0; padding-left: var(--spacing-4); border-left: 4px solid v
 .table { width: 100%; border-collapse: collapse; }
 .table th, .table td { border: 1px solid var(--border); padding: var(--spacing-3); text-align: left; }
 .table th { background: var(--card); }
+
+.muted { color: var(--muted); }
 
 /* Print */
 @media print {
