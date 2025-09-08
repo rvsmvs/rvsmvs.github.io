@@ -31,14 +31,6 @@
     });
   }
 
-  // Latest posts
-  const latestPostsList = document.getElementById('latest-posts');
-  if (latestPostsList && window.SEARCH_INDEX) {
-    const posts = window.SEARCH_INDEX.filter(i => i.url.startsWith('./posts/')).slice(0, 5);
-    if (posts.length) {
-      latestPostsList.innerHTML = posts.map(p => `<li><a href="${p.url}">${p.title}</a></li>`).join('');
-    }
-  }
 
   // Table of contents generation
   const tocEl = document.getElementById('toc');
