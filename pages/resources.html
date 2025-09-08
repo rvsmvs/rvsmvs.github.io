@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resources</title>
+  <meta name="description" content="Curated resources and lab setup checklist for malware analysis.">
+  <meta property="og:title" content="Resources">
+  <meta property="og:description" content="Curated resources and lab setup checklist for malware analysis.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="./resources.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html" aria-label="Home">
+        <img src="../assets/img/favicon.svg" alt="" width="24" height="24" aria-hidden="true"> Malware Analysis
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Primary" aria-expanded="true">
+        <a href="../index.html">Home</a>
+        <a href="./malware-analysis.html">Malware Analysis</a>
+        <a href="./threat-intelligence.html">Threat Intelligence</a>
+        <a href="./objectives.html">Objectives</a>
+        <a href="./resources.html" aria-current="page">Resources</a>
+        <a href="../posts/hello-world.html">Blog</a>
+      </nav>
+      <form role="search" class="search" aria-label="Site search" onsubmit="return false">
+        <input id="site-search" type="search" placeholder="Search..." aria-describedby="search-help">
+      </form>
+    </div>
+    <div class="container">
+      <div id="search-results" class="search-results" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container content-layout" tabindex="-1">
+    <article>
+      <header>
+        <h1>Resources</h1>
+        <p>Curated links and a practical checklist to run malware analysis safely.</p>
+      </header>
+
+      <section id="lab-checklist" aria-labelledby="lab-checklist-title">
+        <h2 id="lab-checklist-title">Lab Setup Checklist</h2>
+        <ul>
+          <li>VM isolation with snapshots and revert strategy.</li>
+          <li>Network segmentation and controlled DNS/HTTP egress.</li>
+          <li>Tooling: strings, PE/ELF tools, disassembler, debugger, monitor utilities.</li>
+          <li>Time sync and clean baselines for comparison.</li>
+          <li>Secure storage for samples and artifacts.</li>
+        </ul>
+      </section>
+
+      <section id="curated-links" aria-labelledby="curated-links-title">
+        <h2 id="curated-links-title">Curated Links</h2>
+        <ul>
+          <li>MITRE ATT&amp;CK</li>
+          <li>MalwareBazaar</li>
+          <li>Any.run</li>
+          <li>CIRCL MISP</li>
+          <li>DFIR training and community blogs</li>
+        </ul>
+      </section>
+
+      <section id="handling" aria-labelledby="handling-title">
+        <h2 id="handling-title">Responsible Handling</h2>
+        <p>Use only benign or authorized samples. Do not distribute malware. Follow organizational and legal requirements when handling potentially harmful code and collected data.</p>
+      </section>
+    </article>
+    <aside id="toc" class="toc" aria-label="Table of contents"></aside>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© <span id="year"></span> Your Name · MIT License · <a href="../">Repository</a></small>
+    </div>
+  </footer>
+
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

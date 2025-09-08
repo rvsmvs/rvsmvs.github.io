@@ -1,19 +1,42 @@
-**Viden**
+# Malware Analysis & Threat Intelligence — Static Site
 
-- Forståelse af malwareanalysemetoder, ransomware-arkitektur og centrale tekniske karakteristika (kryptering, persistence, netværkskommunikation).
+Minimal, accessible, and elegant static website ready for GitHub Pages.
 
-- Indblik i Threat Intelligence-principper, herunder IoCs, TTP’er og MITRE ATT&CK.
+## Features
+- Plain HTML/CSS/JS, no build step
+- Responsive layout with system font stack
+- Light/Dark mode via prefers-color-scheme
+- Accessible semantics, skip link, good contrast
+- Client-side search (titles + keywords)
+- Sticky table of contents on content pages
+- Syntax highlighting (highlight.js) and Mermaid diagrams
+- Print-friendly stylesheet
 
-**Kompetence**
+## Getting Started
+1. Clone this repository.
+2. Enable GitHub Pages:
+   - Go to Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: `main` (or `master`) and `/ (root)`
+   - Save
+3. Visit your site at `https://<username>.github.io/<repo>/`.
 
-- Opsætning af isoleret miljø til statisk og dynamisk analyse af malware.
+## Local Preview
+Just open `index.html` in your browser. For best results with relative links, use a simple local server:
 
-- Omsætte analyseresultater til konkrete forslag, der kan hjælpe med at opdage, håndtere og forebygge angreb.
+```bash
+# Python 3
+python -m http.server 8000
+# or Node.js
+npx http-server -p 8000
+```
 
-- Sammenligning og validering af fund med etablerede trusselsrapporter.
+Then browse `http://localhost:8000`.
 
-**Færdigheder**
+## Customization
+- Edit content in `index.html`, `pages/`, and `posts/`.
+- Update search index in `assets/js/search-index.js`.
+- Adjust styles in `assets/css/styles.css`.
 
-- Identificere og dokumentere IoCs samt kortlægge TTP’er.
-
-- Udarbejde tekniske rapporter og visualiseringer af ransomware-livscyklus og angrebsflow.
+## License
+MIT

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Threat Intelligence</title>
+  <meta name="description" content="IoCs, TTPs mapped to MITRE ATT&CK, and validation guidance.">
+  <meta property="og:title" content="Threat Intelligence">
+  <meta property="og:description" content="IoCs, TTPs mapped to MITRE ATT&CK, and validation guidance.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="./threat-intelligence.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html" aria-label="Home">
+        <img src="../assets/img/favicon.svg" alt="" width="24" height="24" aria-hidden="true"> Malware Analysis
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Primary" aria-expanded="true">
+        <a href="../index.html">Home</a>
+        <a href="./malware-analysis.html">Malware Analysis</a>
+        <a href="./threat-intelligence.html" aria-current="page">Threat Intelligence</a>
+        <a href="./objectives.html">Objectives</a>
+        <a href="./resources.html">Resources</a>
+        <a href="../posts/hello-world.html">Blog</a>
+      </nav>
+      <form role="search" class="search" aria-label="Site search" onsubmit="return false">
+        <input id="site-search" type="search" placeholder="Search..." aria-describedby="search-help">
+      </form>
+    </div>
+    <div class="container">
+      <div id="search-results" class="search-results" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container content-layout" tabindex="-1">
+    <article>
+      <header>
+        <h1>Threat Intelligence Overview</h1>
+        <p>From indicators to behaviors, map and validate findings for actionability.</p>
+      </header>
+
+      <section id="iocs" aria-labelledby="iocs-title">
+        <h2 id="iocs-title">Indicators of Compromise (IoCs)</h2>
+        <p>Track file hashes, domains, IPs, URLs, and registry keys. Consider quality (false positive risk) and lifetime (volatility) when using IoCs operationally.</p>
+        <ul>
+          <li>File hashes: SHA-256 preferred; note packer influence and versioning.</li>
+          <li>Network: domains, IPs, URLs; monitor DNS TTLs and hosting churn.</li>
+          <li>Host artifacts: registry keys, services, scheduled tasks, mutexes.</li>
+        </ul>
+      </section>
+
+      <section id="ttps" aria-labelledby="ttps-title">
+        <h2 id="ttps-title">Tactics, Techniques, and Procedures (TTPs)</h2>
+        <table class="table" role="table" aria-describedby="ttps-caption">
+          <caption id="ttps-caption">Sample ATT&amp;CK mapping with observed evidence.</caption>
+          <thead>
+            <tr><th>Technique ID</th><th>Name</th><th>Evidence</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>T1059</td><td>Command and Scripting Interpreter</td><td>Encoded PowerShell command in startup script</td></tr>
+            <tr><td>T1105</td><td>Ingress Tool Transfer</td><td>Download of payload via HTTPS from hardcoded domain</td></tr>
+            <tr><td>T1486</td><td>Data Encrypted for Impact</td><td>File extensions renamed and ransom note dropped</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="validation" aria-labelledby="validation-title">
+        <h2 id="validation-title">Validation</h2>
+        <p>Compare findings against public reports and community sources. Annotate <strong>confidence levels</strong> (low/medium/high) for each assertion and prefer behavior-based detections where possible.</p>
+      </section>
+    </article>
+    <aside id="toc" class="toc" aria-label="Table of contents"></aside>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© <span id="year"></span> Your Name · MIT License · <a href="../">Repository</a></small>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

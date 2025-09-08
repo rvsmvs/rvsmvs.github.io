@@ -1,24 +1,136 @@
-h1 {
-  font-size: 4rem;
-  font-family: "Roboto Slab", var(--pico-font-family);
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  /* hyphens: auto; */
+/*
+  Minimal, accessible, and elegant CSS for Malware Analysis site
+  - System font stack
+  - Responsive layout
+  - Light/Dark via prefers-color-scheme
+  - Print styles
+*/
+
+:root {
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --max-width: 72rem;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --radius: 0.5rem;
+
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #334155;
+  --card: #f8fafc;
+  --border: #e2e8f0;
+  --link: #0ea5e9;
+  --link-visited: #7c3aed;
+  --accent: #0ea5e9;
 }
-pre {
-  margin-top: calc(var(--pico-spacing) / 2);
-}
-.ignore {
-  display: none;
-}
-@media screen and (max-width: 575px) {
-  h1 {
-    font-size: 2.5rem;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --card: #0f172a;
+    --border: #1f2937;
+    --link: #38bdf8;
+    --link-visited: #a78bfa;
+    --accent: #38bdf8;
   }
 }
-@media screen and (max-width: 360px) {
-  h1 {
-    font-size: 2rem;
-  }
+
+* { box-sizing: border-box; }
+
+html:focus-within { scroll-behavior: smooth; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object { display: block; max-width: 100%; }
+
+a { color: var(--link); }
+
+a:visited { color: var(--link-visited); }
+
+a:hover, a:focus-visible { text-decoration: underline; }
+
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-4); }
+
+header.site-header { position: sticky; top: 0; z-index: 1000; background: var(--bg); border-bottom: 1px solid var(--border); }
+
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-4); padding: var(--spacing-3) 0; }
+
+.nav { display: flex; align-items: center; gap: var(--spacing-4); }
+
+.nav a { text-decoration: none; color: inherit; padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius); }
+
+.nav a:focus-visible, .nav a[aria-current="page"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.nav-toggle { display: none; }
+
+@media (max-width: 800px) {
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); background: var(--card); padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius); }
+  .nav[aria-expanded="false"] { display: none; }
+  .header-inner { flex-wrap: wrap; }
+}
+
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { position: static; width: auto; height: auto; padding: var(--spacing-2) var(--spacing-3); background: var(--accent); color: #001018; border-radius: var(--radius); }
+
+.hero { padding: var(--spacing-8) 0; }
+.hero h1 { margin: 0 0 var(--spacing-3) 0; font-size: clamp(1.75rem, 3vw, 2.5rem); }
+
+.btn-row { display: flex; gap: var(--spacing-3); flex-wrap: wrap; }
+
+.button { display: inline-block; padding: var(--spacing-3) var(--spacing-4); border-radius: var(--radius); border: 1px solid var(--border); background: var(--card); color: inherit; text-decoration: none; }
+.button.primary { background: var(--accent); color: #001018; border-color: transparent; }
+
+.grid { display: grid; gap: var(--spacing-4); }
+.grid.cards { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--spacing-6); }
+
+main { padding: var(--spacing-6) 0; }
+
+section + section { margin-top: var(--spacing-8); }
+
+footer.site-footer { margin-top: var(--spacing-8); border-top: 1px solid var(--border); padding: var(--spacing-6) 0; color: var(--muted); }
+
+.site-title { display: inline-flex; align-items: center; gap: var(--spacing-2); font-weight: 600; }
+
+.search { display: inline-flex; align-items: center; gap: var(--spacing-2); }
+.search input[type="search"] { padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius); border: 1px solid var(--border); background: var(--card); color: inherit; }
+.search-results { margin-top: var(--spacing-2); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--spacing-2); max-height: 16rem; overflow: auto; }
+
+.toc { position: sticky; top: calc(56px + var(--spacing-4)); align-self: start; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--spacing-4); max-height: calc(100vh - 120px); overflow: auto; }
+
+.content-layout { display: grid; grid-template-columns: 1fr minmax(220px, 280px); gap: var(--spacing-6); }
+@media (max-width: 1000px) { .content-layout { grid-template-columns: 1fr; } }
+
+.toc a { color: inherit; text-decoration: none; }
+.toc a.active { color: var(--accent); font-weight: 600; }
+
+pre, code, kbd, samp { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+pre { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--spacing-4); overflow: auto; }
+
+blockquote { margin: 0; padding-left: var(--spacing-4); border-left: 4px solid var(--border); color: var(--muted); }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { border: 1px solid var(--border); padding: var(--spacing-3); text-align: left; }
+.table th { background: var(--card); }
+
+/* Print */
+@media print {
+  header.site-header, .search, .toc, .btn-row, footer.site-footer { display: none !important; }
+  body { background: #fff; color: #000; }
+  a { color: #000; text-decoration: underline; }
+  .card { border-color: #000; }
 }
