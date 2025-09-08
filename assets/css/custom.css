@@ -1,7 +1,7 @@
 
 /* Layout helpers */
 .container {
-  max-width: 960px;
+  max-width: 1100px;
   margin-inline: auto;
 }
 
@@ -84,7 +84,7 @@ main h2, main h3 {
   border: 1px solid var(--pico-muted-border-color);
   border-radius: var(--pico-border-radius);
   background: var(--pico-card-background-color);
-  padding: var(--pico-spacing);
+  padding: calc(var(--pico-spacing) * 1.25);
 }
 
 .resources-grid h3 { margin-bottom: calc(var(--pico-spacing) / 4); }
