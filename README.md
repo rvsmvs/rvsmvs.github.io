@@ -1,5 +1,3 @@
-#### Læringsmål
-
 **Viden**
 
 - Forståelse af malwareanalysemetoder, ransomware-arkitektur og centrale tekniske karakteristika (kryptering, persistence, netværkskommunikation).
