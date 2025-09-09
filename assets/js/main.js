@@ -16,20 +16,7 @@
     });
   }
 
-  // Search
-  const searchInput = document.getElementById('site-search');
-  const searchResults = document.getElementById('search-results');
-  if (searchInput && searchResults && window.SEARCH_INDEX) {
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.trim().toLowerCase();
-      if (!q) { searchResults.innerHTML = ''; return; }
-      const results = window.SEARCH_INDEX.filter(item =>
-        item.title.toLowerCase().includes(q) ||
-        (item.keywords && item.keywords.join(' ').toLowerCase().includes(q))
-      ).slice(0, 8);
-      searchResults.innerHTML = results.map(r => `<div><a href="${r.url}">${r.title}</a></div>`).join('');
-    });
-  }
+  
 
 
   // Table of contents generation

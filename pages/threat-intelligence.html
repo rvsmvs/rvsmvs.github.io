@@ -28,12 +28,6 @@
         <a href="./objectives.html">Objectives</a>
         <a href="./resources.html">Resources</a>
       </nav>
-      <form role="search" class="search" aria-label="Site search" onsubmit="return false">
-        <input id="site-search" type="search" placeholder="Search..." aria-describedby="search-help">
-      </form>
-    </div>
-    <div class="container">
-      <div id="search-results" class="search-results" aria-live="polite"></div>
     </div>
   </header>
 
@@ -57,7 +51,6 @@
       <section id="ttps" aria-labelledby="ttps-title">
         <h2 id="ttps-title">Tactics, Techniques, and Procedures (TTPs)</h2>
         <table class="table" role="table" aria-describedby="ttps-caption">
-          <caption id="ttps-caption">Sample ATT&amp;CK mapping with observed evidence.</caption>
           <thead>
             <tr><th>Technique ID</th><th>Name</th><th>Evidence</th></tr>
           </thead>
@@ -69,23 +62,8 @@
         </table>
       </section>
 
-      <section id="validation" aria-labelledby="validation-title">
-        <h2 id="validation-title">Validation</h2>
-        <p>Compare findings against public reports and community sources. Annotate <strong>confidence levels</strong> (low/medium/high) for each assertion and prefer behavior-based detections where possible.</p>
-      </section>
-    </article>
-    <aside id="toc" class="toc" aria-label="Table of contents"></aside>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <small>© <span id="year"></span> Your Name · MIT License · <a href="../">Repository</a></small>
-    </div>
-  </footer>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="../assets/js/search-index.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -37,6 +37,3 @@ Then browse `http://localhost:8000`.
 - Edit content in `index.html`, `pages/`, and `posts/`.
 - Update search index in `assets/js/search-index.js`.
 - Adjust styles in `assets/css/styles.css`.
-
-## License
-MIT
