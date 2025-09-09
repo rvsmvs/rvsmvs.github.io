@@ -1,13 +1,18 @@
 /*
   Minimal, accessible, and elegant CSS for Malware Analysis site
-  - System font stack
+  - System font stack with optional tech-forward web fonts
   - Responsive layout
   - Light/Dark via prefers-color-scheme
   - Print styles
 */
 
+/* Optional elegant tech fonts (fast, swap rendering) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
 :root {
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-body: "Inter", var(--font-sans);
+  --font-heading: "Space Grotesk", var(--font-sans);
   --max-width: 72rem;
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -25,6 +30,12 @@
   --link: #0ea5e9;
   --link-visited: #7c3aed;
   --accent: #0ea5e9;
+
+  /* Neon palette (used lightly in light mode) */
+  --neon-cyan: #22d3ee;
+  --neon-pink: #f472b6;
+  --surface: rgba(255,255,255,0.6);
+  --glow: 0 0 0 rgba(0,0,0,0); /* noop in light mode */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +48,11 @@
     --link: #38bdf8;
     --link-visited: #a78bfa;
     --accent: #38bdf8;
+
+    --neon-cyan: #22d3ee;
+    --neon-pink: #f472b6;
+    --surface: rgba(15,23,42,0.6);
+    --glow: 0 0 8px rgba(34,211,238,0.35), 0 0 18px rgba(164, 69, 255, 0.15);
   }
 }
 
@@ -44,16 +60,22 @@
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
-  background: var(--bg);
+  font-family: var(--font-body);
+  /* Subtle grid + radial glow background in dark mode; simple bg in light */
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(244,114,182,0.08), transparent 60%),
+    radial-gradient(1000px 500px at 60% -20%, rgba(34,211,238,0.10), transparent 65%),
+    repeating-linear-gradient(0deg, rgba(148,163,184,0.05) 0 1px, transparent 1px 40px),
+    var(--bg);
+  background-attachment: fixed, fixed, fixed, fixed;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 { line-height: 1.25; margin-top: 1.5em; margin-bottom: 0.5em; }
-p { margin: 0 0 1em 0; }
-ul, ol { margin: 0 0 1em 1.25em; }
+p { margin: 0 0 1.15em 0; }
+ul, ol { margin: 0 0 1.1em 1.25em; }
 
 img { display: block; max-width: 100%; }
 
@@ -65,15 +87,17 @@ a:hover, a:focus-visible { text-decoration: underline; }
 
 .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-4); }
 
-header.site-header { position: sticky; top: 0; z-index: 1000; background: var(--bg); border-bottom: 1px solid var(--border); }
+header.site-header { position: sticky; top: 0; z-index: 1000; background: color-mix(in oklab, var(--bg) 82%, transparent); border-bottom: 1px solid var(--border); backdrop-filter: saturate(120%) blur(6px); }
 
 .header-inner { display: flex; align-items: center; justify-content: flex-start; gap: var(--spacing-4); padding: var(--spacing-3) 0; }
 
 .nav { display: flex; align-items: center; gap: var(--spacing-4); }
 
-.nav a { text-decoration: none; color: inherit; padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius); }
+.nav a { text-decoration: none; color: inherit; padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius); transition: color .2s ease, box-shadow .2s ease, background-color .2s ease; }
 
-.nav a:focus-visible, .nav a[aria-current="page"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+.nav a:focus-visible, .nav a[aria-current="page"] { outline: 2px solid var(--accent); outline-offset: 2px; box-shadow: var(--glow); }
+
+.nav a:hover { color: var(--neon-cyan); box-shadow: none; }
 
 .nav-toggle { display: none; }
 
@@ -91,7 +115,8 @@ header.site-header { position: sticky; top: 0; z-index: 1000; background: var(--
 .grid { display: grid; gap: var(--spacing-4); }
 .grid.cards { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
-.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--spacing-6); }
+.card { background: linear-gradient(180deg, color-mix(in oklab, var(--card) 86%, transparent), color-mix(in oklab, var(--card) 96%, transparent)); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--spacing-6); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; box-shadow: 0 0 0 rgba(0,0,0,0); }
+.card:hover { transform: translateY(-2px); border-color: color-mix(in oklab, var(--neon-cyan) 60%, var(--border)); box-shadow: 0 10px 24px rgba(2,6,23,0.5), 0 0 24px rgba(34,211,238,0.18); }
 
 main { padding: var(--spacing-6) 0; }
 
@@ -106,6 +131,16 @@ footer.site-footer { margin-top: var(--spacing-8); border-top: 1px solid var(--b
 
 .toc a { color: inherit; text-decoration: none; }
 .toc a.active { color: var(--accent); font-weight: 600; }
+
+/* Headings with soft neon glow in dark mode */
+h1, h2, h3 { position: relative; font-weight: 800; letter-spacing: 0.015em; color: color-mix(in oklab, var(--text) 88%, var(--neon-cyan)); font-family: var(--font-heading); }
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3 { text-shadow: 0 2px 12px rgba(0,0,0,0.55), 0 0 10px rgba(34,211,238,0.18), 0 0 26px rgba(244,114,182,0.12); }
+}
+
+/* Links with neon hover underline */
+a { color: var(--link); }
+a:hover, a:focus-visible { text-decoration: underline; box-shadow: none; }
 
 /* Code and blockquote styles removed */
 
