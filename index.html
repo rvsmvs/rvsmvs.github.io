@@ -3,46 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Malware Analysis & Threat Intelligence</title>
+  <title>Home</title>
   <meta name="description" content="Minimal, accessible resources on malware analysis and threat intelligence.">
   <meta property="og:title" content="Malware Analysis & Threat Intelligence">
   <meta property="og:description" content="Minimal, accessible resources on malware analysis and threat intelligence.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="./index.html">
   <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="site-title" href="./index.html" aria-label="Home">
-        <img src="./assets/img/favicon.svg" alt="" width="24" height="24" aria-hidden="true"> Malware Analysis
-      </a>
       <button id="nav-toggle" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <nav id="site-nav" class="nav" aria-label="Primary" aria-expanded="true">
         <a href="./index.html" aria-current="page">Home</a>
         <a href="./pages/malware-analysis.html">Malware Analysis</a>
         <a href="./pages/threat-intelligence.html">Threat Intelligence</a>
-        <a href="./pages/objectives.html">Objectives</a>
         <a href="./pages/resources.html">Resources</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content" class="container" tabindex="-1">
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Malware Analysis & Threat Intelligence</h1>
-      <p>Cool tagline goes here...</p>
-      <div class="btn-row">
-        <a class="button primary" href="./pages/objectives.html">View Objectives</a>
-        <a class="button" href="./pages/malware-analysis.html">Start Malware Analysis</a>
-      </div>
+
+    <section aria-labelledby="objectives-title">
+      <h2 id="objectives-title">Objectives</h2>
+      <h3>Knowledge</h3>
+      <ul>
+        <li>Understand core malware analysis methodologies, describe common malware architectural patterns, and characterize essential technical features, including encryption, persistence mechanisms, and network and command-and-control (C2)</li>
+        <li>Gain insight into Threat Intelligence principles, including Indicators of Compromise (IoCs), Tactics–Techniques–Procedures (TTPs), and the MITRE ATT&amp;CK framework.</li>
+      </ul>
+
+      <h3>Competence</h3>
+      <ul>
+        <li>Design and maintain an isolated laboratory environment for static and dynamic malware analysis, adhering to security and ethical best practices.</li>
+        <li>Translate analysis results into actionable recommendations for detection, incident response, and preventive controls.</li>
+        <li>Compare and validate analytical findings against established threat reports and vendor intelligence..</li>
+      </ul>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>Identify and document IoCs and map TTPs to MITRE ATT&amp;CK.</li>
+        <li>Produce clear, rigorous technical reports and visualizations that communicate the malware life cycle and end-to-end attack flow.</li>
+      </ul>
     </section>
 
     <section aria-labelledby="features-title">
-      <h2 id="features-title">Focus Areas</h2>
       <div class="grid cards">
         <article class="card">
           <h3>Malware Analysis</h3>
@@ -64,8 +72,6 @@
 
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js" integrity="sha512-Rs1A2JqEJb1qI0rF8g1wK8n9sUuW6qJX2o2m8b7bVYl1h8u3J8o6m8xNqk6R3G7UoK0jzP2aT1H1E7l3b2yG7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-eXqYxY1p9g1mYf5uQf2RjK6sQyMZ8e9sZ6TtZt0mGv1m4Jd2g3xwA0bqE0yF5fW1P8z6rQn7yP1z8u2i3k5s9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./assets/js/main.js"></script>
 </body>
 </html>
